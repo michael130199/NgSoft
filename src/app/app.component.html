@@ -1,0 +1,53 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand text-light">{{title}}</a>
+  <button class="navbar-toggler"type="button" data-toggle="collapse" 
+    data-target="#navbar-1" aria-controls="navbar-1" 
+    aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbar-1">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
+            <i class="fas fa-home"></i>Inicio
+          </a> 
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/animales']" [routerLinkActive]="['active']">
+            <i class="fas fa-bone"></i>Animales
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/cuidadores']" [routerLinkActive]="['active']">
+            <i class="fas fa-user-friends"></i>Cuidadores
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/tienda']" [routerLinkActive]="['active']">
+              <i class="fas fa-shopping-cart"></i>Tienda
+            </a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactos']" [routerLinkActive]="['active']">
+            <i class="fas fa-address-book"></i>Contactos
+          </a>
+        </li>
+        <li class="d-none">
+          <span *ngIf="emailContact">
+            <strong> Email de Contacto:{{emailContact}} </strong>
+            <button (click)="deleteEmail()">Eliminar Email De Contacto</button>
+          </span>
+        </li> 
+      </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark">
+  <a class="navbar-brand text-light">Creador: {{creator}}</a>
+</nav>

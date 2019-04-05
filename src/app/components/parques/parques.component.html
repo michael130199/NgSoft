@@ -1,0 +1,11 @@
+<h1> El nombre del Parque es {{nombre}} </h1>
+<ul>
+    <li>Vegetacion: {{ vegetacion }}</li>
+    <li>Metros: {{ metros }}</li>
+    <li>
+        <span *ngIf="abierto == true"> Abierto </span>
+        <span *ngIf="abierto != true"> Cerrado </span>
+    </li>                
+</ul>
+
+<button (click)="emitirEvento()">Mostrar en Tienda (Padre)</button>

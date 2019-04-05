@@ -1,0 +1,41 @@
+<h4>Utilizar Jquery dentro de Angular</h4>
+<button id="botonjq">Mostrar Texto</button>
+
+<p id="textojq" class="d-none alert alert-danger">
+    A lightweight, flexible component that can 
+    optionally extend the entire viewport to 
+    showcase key marketing messages on your site.
+</p>
+
+<hr>
+
+Padre:
+<h1> {{titulo}} </h1>
+<ol>
+    <li>camiseta</li>
+    <li>gorra negra</li>            
+</ol>
+
+<hr>
+Nombre del Parque:
+<input type="text" [(ngModel)]="NombreParque" (keyup)="mostrarNombre()">
+Pregunta: {{NombreParque}}
+<hr>
+
+<div *ngIf="miParque">
+    <h4>La respuesta es:</h4>
+    <ol>
+        <li>{{miParque.vegetacion}}</li>
+    </ol>
+</div>
+
+<!-- hooks onChanges - OnInit - DoCheck - OnDestroy -->
+
+<hr>
+<p *ngIf="NombreParque">
+    Hijo:
+    <parques 
+        [nombre]="NombreParque"
+        (pasameLosDatos)="datosParques($event)"
+    ></parques>
+</p>
