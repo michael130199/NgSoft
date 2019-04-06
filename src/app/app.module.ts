@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { routing, appRoutingProviders } from './app-routing.module';
 
+//Importar nuestro nuevo modulo
+import { ModuloEmailModule } from './moduloEmail/moduloEmail.module';
+
+
 // Componentes 
 
 import { AppComponent } from './app.component';
@@ -36,7 +40,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     BrowserModule,
     routing,
     FormsModule,
-    EditorModule
+    EditorModule,
+    ModuloEmailModule
   ],
   providers: [
     appRoutingProviders
