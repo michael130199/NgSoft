@@ -16,7 +16,7 @@ import { Routes, RouterModule } from '@angular/router';
   import { ContactComponent } from './components/contact/contact.component';
   import { HomeComponent    } from './components/home/home.component';
   import { KeepersComponent } from './components/keepers/keepers.component';
-
+  import { TinyComponent } from './components/tiny-simple/tiny-simple';
 
 
 const appRoutes: Routes = [
@@ -27,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'contactos', component: ContactComponent},
   {path: 'cuidadores', component: KeepersComponent},
   {path: 'tienda', component: TiendaComponent},
+  {path: 'tiny', component: TinyComponent},
   {path: '**', component: HomeComponent}
 ];
 

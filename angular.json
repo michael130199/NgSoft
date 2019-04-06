@@ -30,7 +30,6 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/jquery-dotdotdot/src/jquery.dotdotdot.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-              
             ]
           },
           "configurations": {
@@ -92,7 +91,6 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/jquery-dotdotdot/src/jquery.dotdotdot.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-              
             ],
             "assets": [
               "src/favicon.ico",

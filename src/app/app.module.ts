@@ -15,6 +15,10 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent    } from './components/home/home.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
+import { TinyComponent } from './components/tiny-simple/tiny-simple';
+
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 
 @NgModule({
@@ -25,12 +29,14 @@ import { KeepersComponent } from './components/keepers/keepers.component';
     AnimalsComponent,
     ContactComponent,
     HomeComponent,
-    KeepersComponent
+    KeepersComponent,
+    TinyComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    EditorModule
   ],
   providers: [
     appRoutingProviders
