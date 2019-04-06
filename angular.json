@@ -28,6 +28,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/jquery-dotdotdot/src/jquery.dotdotdot.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
               
             ]
@@ -89,6 +90,7 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/jquery-dotdotdot/src/jquery.dotdotdot.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
               
             ],

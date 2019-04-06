@@ -25,6 +25,8 @@ export class TiendaComponent implements OnInit{
             console.log('Click desde');
             $('#textojq').removeClass('d-none').slideToggle();
         });
+        
+        $('#caja').dotdotdot({});
     }
 
     mostrarNombre(){
