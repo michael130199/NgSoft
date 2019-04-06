@@ -7,7 +7,7 @@ import { routing, appRoutingProviders } from './app-routing.module';
 
 //Importar nuestro nuevo modulo
 import { ModuloEmailModule } from './moduloEmail/moduloEmail.module';
-
+import { AdminModule } from './admin/admin.module';
 
 // Componentes 
 
@@ -41,7 +41,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     routing,
     FormsModule,
     EditorModule,
-    ModuloEmailModule
+    ModuloEmailModule,
+    AdminModule
   ],
   providers: [
     appRoutingProviders
