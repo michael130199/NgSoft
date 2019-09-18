@@ -36,15 +36,10 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/tiny']" [routerLinkActive]="['active']">
-            <i class="fas fa-address-book"></i>Tiny
+            <i class="fas fa-stroopwafel"></i> Tiny
           </a>
         </li>
-        <li class="d-none">
-          <span *ngIf="emailContact">
-            <strong> Email de Contacto:{{emailContact}} </strong>
-            <button (click)="deleteEmail()">Eliminar Email De Contacto</button>
-          </span>
-        </li> 
+        
       </ul>
   </div>
 </nav>
