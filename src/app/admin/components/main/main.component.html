@@ -1,11 +1,38 @@
 <div class="row">
-    <div class="col-lg-4">
-        <h3>{{title}}</h3>
-        <div class="list-group">
-            a.list-group-item  
+
+    <nav class="col-lg-3 d-none d-md-block bg-light sidebar">
+            
+        <div class="sidebar-sticky">
+
+            <h3>{{title}}</h3>
+
+            <ul class="nav flex-column">
+
+                <li class="nav-item" [routerLinkActive]="['active']">
+
+                    <a [routerLink]="['listado']" class="nav-link">Listado</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a [routerLink]="['agregar']" class="nav-link">Agregar</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a [routerLink]="['editar']" class="nav-link">Editar</a>
+
+                </li>
+
+            </ul>
+
         </div>
-    </div>
-    <div class="col-lg-8">
+
+    </nav>
+
+    <div class="col-lg-9">
         <router-outlet></router-outlet>
     </div>
 </div>

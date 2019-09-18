@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 
-import { AdminRoutingModule } from './admin-Routing.module';
+import { AdminRoutingModule } from './admin-routing.module';
  
 //Componentes
 import { MainComponent } from './components/main/main.component';
