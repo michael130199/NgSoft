@@ -1,8 +1,8 @@
 <div class="col-lg-12">
     
-    <h3>{{title}}</h3>
+    <h3 class="my-3">{{title}}</h3>
 
-    <table class="table">
+    <table class="table table-hover table-dark">
 
         <thead>
 
@@ -22,9 +22,9 @@
 
         <tbody>
 
-            <tr>
+            <tr *ngFor="let n of numbers; let i = index">
 
-                <th scope="row">1</th>
+                <th scope="row">{{i+1}}</th>
 
                 <td>Oso Panda</td>
                 
@@ -32,10 +32,22 @@
                 
                 <td>
 
+                    <button class="btn btn-sm btn-success">
+
+                        <i class="fas fa-eye"></i>
+                        Ver
+
+                    </button>
                     <button class="btn btn-sm btn-primary">
 
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <i class="fas fa-pencil-alt"></i>
                         Editar
+
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+
+                        <i class="fas fa-trash"></i>                        
+                        Borrar
 
                     </button>
                 </td>
