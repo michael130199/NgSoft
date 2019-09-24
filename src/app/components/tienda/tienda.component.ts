@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { trigger, state, style, transition, animate } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 declare var jQuery:any;
 declare var $:any;
