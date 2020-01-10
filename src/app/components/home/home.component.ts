@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Action } from 'rxjs/internal/scheduler/Action';
+import { fadeIn } from '../animations';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [fadeIn]
 })
 export class HomeComponent implements OnInit{
   title = 'Bienvenido a NgSoft';

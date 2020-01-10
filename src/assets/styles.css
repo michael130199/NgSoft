@@ -9,11 +9,11 @@
     margin-right: 4px;
 }
 
-.navbar-nav .nav-item .active {
+.navbar-nav>.nav-item>.active {
     border-bottom: 3px solid rgb(93, 173, 226);
 }
 
-.navbar-nav .nav-item:hover {
+.navbar-nav>.nav-item> a:hover {
     transition:all 500ms;
 
     border-bottom: 3px solid rgb(93, 173, 226);
@@ -50,7 +50,7 @@
     height: 200px;
     margin-left: 10px;
     /*
-    animation-name: deslizamiento;
+    animation-name: rotate;
     animation-duration: 10s;
     animation-iteration-count: infinite;*/
 }

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" [@fadeIn]>
     <div class="row justify-content-center">
         <div class="jumbotron col-8">
             <h1 class="display-4">{{title}}</h1>
@@ -6,7 +6,7 @@
             <hr class="my-4">
             <a class="btn btn-lg text-white" role="button" [routerLink]="['/animales']" style="background-color:rgb(124, 99, 235);">Ver Animales</a>
             <a class="btn btn-success btn-lg" role="button" [routerLink]="['/cuidadores']">Ver Cuidadores</a>
-            <a class="btn btn-warning btn-lg text-white" role="button" [routerLink]="['/contacto']">Contacte con Nosotros</a>
+            <a class="btn btn-warning btn-lg text-white" role="button" [routerLink]="['/contactos']">Contacte con Nosotros</a>
         </div>
     </div>
 </div>

@@ -1,63 +1,72 @@
-<hr/>
+<div class="container-fluid" [@fadeIn]>
+    
+    <hr/>
 
-<a class="boton_activo btn btn-primary" >Transiciones</a>
+    <a class="boton_activo btn btn-success"
+        [@marcar]="status" (click)="cambiarEstado(status)">
 
-<hr/>
+        <span *ngIf="status === 'inactive'">Boton Inactivo</span>
+        <span *ngIf="status === 'active'">Boton Activo</span>
 
-<h4>Animaciones CSS3</h4>
+    </a>
+    <hr/>
 
-<a class="boton_transiciones">Transiciones</a>
-<br/>
+    <h4>Animaciones CSS3</h4>
 
-<div class="caja_animada">
+    <a class="boton_transiciones">Transiciones</a>
 
-</div>
-<hr/>
+    <br/>
 
-<h4>Utilizar Jquery dentro de Angular</h4>
-<button id="botonjq">Mostrar Texto</button>
+    <div class="caja_animada"></div>
 
-<p id="textojq" class="d-none alert alert-danger">
-    A lightweight, flexible component that can 
-    optionally extend the entire viewport to 
-    showcase key marketing messages on your site.
-</p>
+    <hr/>
 
-<div id="caja" style="border: 1px solid black;width:150px; height:50px">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cumque iste nesciunt assumenda eaque maxime hic commodi eveniet ratione ab quas, blanditiis non vitae maiores quibusdam. Nemo esse omnis numquam?
-</div>
+    <h4>Utilizar Jquery dentro de Angular</h4>
+    <button id="botonjq">Mostrar Texto</button>
+
+    <p id="textojq" class="d-none alert alert-danger">
+        A lightweight, flexible component that can 
+        optionally extend the entire viewport to 
+        showcase key marketing messages on your site.
+    </p>
+
+    <div id="caja" style="border: 1px solid black;width:150px; height:50px">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cumque iste nesciunt assumenda eaque maxime hic commodi eveniet ratione ab quas, blanditiis non vitae maiores quibusdam. Nemo esse omnis numquam?
+    </div>
 
 
 
-<hr>
+    <hr>
 
-Padre:
-<h1> {{titulo}} </h1>
-<ol>
-    <li>camiseta</li>
-    <li>gorra negra</li>            
-</ol>
-
-<hr>
-Nombre del Parque:
-<input type="text" [(ngModel)]="NombreParque" (keyup)="mostrarNombre()">
-Pregunta: {{NombreParque}}
-<hr>
-
-<div *ngIf="miParque">
-    <h4>La respuesta es:</h4>
+    Padre:
+    <h1> {{titulo}} </h1>
     <ol>
-        <li>{{miParque.vegetacion}}</li>
+        <li>camiseta</li>
+        <li>gorra negra</li>            
     </ol>
+
+    <hr>
+    Nombre del Parque:
+    <input type="text" [(ngModel)]="NombreParque" (keyup)="mostrarNombre()">
+    Pregunta: {{NombreParque}}
+    <hr>
+
+    <div *ngIf="miParque">
+        <h4>La respuesta es:</h4>
+        <ol>
+            <li>{{miParque.vegetacion}}</li>
+        </ol>
+    </div>
+
+    <!-- hooks onChanges - OnInit - DoCheck - OnDestroy -->
+
+    <hr>
+    <p *ngIf="NombreParque">
+        Hijo:
+        <parques 
+            [nombre]="NombreParque"
+            (pasameLosDatos)="datosParques($event)"
+        ></parques>
+    </p>
+
 </div>
-
-<!-- hooks onChanges - OnInit - DoCheck - OnDestroy -->
-
-<hr>
-<p *ngIf="NombreParque">
-    Hijo:
-    <parques 
-        [nombre]="NombreParque"
-        (pasameLosDatos)="datosParques($event)"
-    ></parques>
-</p>
