@@ -1,0 +1,12 @@
+.image_for_edit {
+    display: block;
+    background-color: #343a40;
+    padding: 10px 0px;
+    margin: 15px 0px;
+}
+
+.image{
+    display: block;
+    width: 25%;
+    margin: 0px auto;
+}

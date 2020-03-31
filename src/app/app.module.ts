@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routing, appRoutingProviders } from './app-routing.module';
@@ -22,7 +23,9 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 import { TinyComponent } from './components/tiny-simple/tiny-simple';
 
 import { EditorModule } from '@tinymce/tinymce-angular';
-
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
 @NgModule({
@@ -34,12 +37,16 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     ContactComponent,
     HomeComponent,
     KeepersComponent,
-    TinyComponent
+    TinyComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
+    HttpClientModule,
     EditorModule,
     ModuloEmailModule,
     AdminModule,

@@ -17,7 +17,10 @@ import { Routes, RouterModule } from '@angular/router';
   import { HomeComponent    } from './components/home/home.component';
   import { KeepersComponent } from './components/keepers/keepers.component';
   import { TinyComponent } from './components/tiny-simple/tiny-simple';
-
+  import { LoginComponent } from './components/login/login.component';
+  import { RegisterComponent } from './components/register/register.component';
+  import { UserEditComponent } from './components/user-edit/user-edit.component';
+  
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,6 +31,9 @@ const appRoutes: Routes = [
   {path: 'cuidadores', component: KeepersComponent},
   {path: 'tienda', component: TiendaComponent},
   {path: 'tiny', component: TinyComponent},
+  {path: 'registro', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'mis-datos', component: UserEditComponent},
   {path: '**', component: HomeComponent}
 ];
 

@@ -9,44 +9,111 @@
   
   <div class="collapse navbar-collapse" id="navbar-1">
     <ul class="navbar-nav mr-auto">
+
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">
             <i class="fas fa-home"></i>Inicio
           </a> 
         </li>
+
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/animales']" [routerLinkActive]="['active']">
             <i class="fas fa-bone"></i>Animales
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/cuidadores']" [routerLinkActive]="['active']">
             <i class="fas fa-user-friends"></i>Cuidadores
           </a>
         </li>
+
         <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/tienda']" [routerLinkActive]="['active']">
-              <i class="fas fa-shopping-cart"></i>Tienda
-            </a>
-          </li>
+          <a class="nav-link" [routerLink]="['/tienda']" [routerLinkActive]="['active']">
+            <i class="fas fa-shopping-cart"></i>Tienda
+          </a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/contactos']" [routerLinkActive]="['active']">
             <i class="fas fa-address-book"></i>Contactos
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/tiny']" [routerLinkActive]="['active']">
             <i class="fas fa-stroopwafel"></i> Tiny
           </a>
         </li>
+
+        <li class="nav-item none">
+          <a class="nav-link active">l</a>
+        </li>
         
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="!identity">
+
+        <li class="nav-item none">
+          <a class="nav-link active">l</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/registro']" [routerLinkActive]="['active']">
+            <i class="fas fa-user"></i> Registro
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="identity">
+
+        
+        <li class="nav-item" *ngIf="identity.image">
+          <div class="avatar-container">
+            <img class="avatar" src="{{ url + 'get-image-file/'  + identity.image}}">
+          </div>
+        </li>
+
+        <li class="nav-item none" *ngIf="!identity.image">
+          <a class="nav-link active">l</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="dropdown-toggle nav-link-dropdown" 
+            id="dropdownMenuLink" 
+            data-toggle="dropdown" 
+            aria-haspopup="true" 
+            aria-expanded="false">
+
+            {{identity.name}}
+          </a>
+
+          <div class="dropdown-menu dropdown-right dropdown-background" 
+            aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item dropdown-color"
+              [routerLink]="['/mis-datos']">
+              <i class="fas fa-cogs"></i> Mis Datos
+            </a>
+            
+            <a class="dropdown-item dropdown-color" (click)="logout()">
+              <i class="fas fa-sign-out-alt"></i> Salir
+            </a>
+          </div>
+
+        </li>
       </ul>
   </div>
 </nav>
 
 <router-outlet></router-outlet>
 
-<div class="mt-5"></div>
 
 <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-dark" >
   <a class="navbar-brand text-light">Creador: {{creator}}</a>
