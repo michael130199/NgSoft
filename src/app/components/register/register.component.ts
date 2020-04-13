@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 
-import { UserClass, User } from 'src/app/models/user';
+import { UserClass } from 'src/app/models/user';
 // import { GLOBAL } from './global'; //lo cambie por el environment
 import { environment } from '../../../environments/environment';
 import { UserService } from './../../services/user.service';

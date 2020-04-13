@@ -26,6 +26,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     TinyComponent,
     LoginComponent,
     RegisterComponent,
-    UserEditComponent
+    UserEditComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,39 +1,64 @@
-<div class="row">
-
-    <nav class="col-lg-3 d-none d-md-block bg-light sidebar">
+<div class="container-fluid mb-5">
+    
+    <div class="row justify-content-end">
             
-        <div class="sidebar-sticky">
 
-            <h3>{{title}}</h3>
+        <nav class="col-md-2 d-md-block bg-app text-dark sidebar border-right">
+            
+            <div class="header text-center">
+                <h2 class="text-light">NgSoft</h2>
+            </div>
 
-            <ul class="nav flex-column">
+            <div class="sticky-top py-3">
 
-                <li class="nav-item" [routerLinkActive]="['active']">
+                <h3 class=" text-center">
+                    <i class="fas fa-tasks"></i>
+                    {{title}}
+                </h3>
 
-                    <a [routerLink]="['listado']" class="nav-link">Listado</a>
+                <ul class="nav flex-column">
 
-                </li>
+                    <li class="nav-item nav-item-app" 
+                        [routerLinkActive]="['active']">
 
-                <li class="nav-item">
+                        <a [routerLink]="['listado']" 
+                            class="nav-link">
+                            <i class="fas fa-list-alt"></i>
+                            Listado
+                        </a>
 
-                    <a [routerLink]="['agregar']" class="nav-link">Agregar</a>
+                    </li>
 
-                </li>
+                    <li class="nav-item nav-item-app"
+                        [routerLinkActive]="['active']">
 
-                <li class="nav-item">
+                        <a [routerLink]="['agregar']" 
+                            class="nav-link">
+                            <i class="fas fa-plus-square"></i> 
+                            Agregar
+                        </a>
 
-                    <a [routerLink]="['editar']" class="nav-link">Editar</a>
+                    </li>
 
-                </li>
+                    <li class="nav-item nav-item-app">
 
-            </ul>
+                        <a [routerLink]="['listado']" 
+                            class="nav-link">
+                            <i class="fas fa-edit"></i>
+                            Información
+                        </a>
 
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+        <div class="col-lg-10">
+            <router-outlet></router-outlet>
         </div>
-
-    </nav>
-
-    <div class="col-lg-9">
-        <router-outlet></router-outlet>
     </div>
-</div>
 
+</div>

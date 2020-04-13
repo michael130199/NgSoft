@@ -23,7 +23,8 @@ export class UserService {
     let params = JSON.stringify(user);
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-    return this._http.post(this.url + 'register', 
+    return this._http.post(
+      this.url + 'register', 
       params, 
       {headers: headers}
     );
@@ -85,5 +86,9 @@ export class UserService {
     );
 
   }
+
+  getKeepers(): Observable<any>{
+    return this._http.get(this.url + 'keepers');
+}
 
 }

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AdminGuard } from '../services/admin.guard';
+
 //Componentes
 import { MainComponent } from './components/main/main.component';
 import { ListComponent } from './components/list/list.component';
@@ -11,10 +13,12 @@ const adminRoutes: Routes= [
     {
         path: 'admin-panel',
         component: MainComponent,
+        canActivate: [AdminGuard],
         children: [//admin-panel/lo que sea
+            {path: '', redirectTo: 'listado', pathMatch: 'full'},
             {path: 'listado', component: ListComponent},
             {path: 'agregar', component: AddComponent},
-            {path: 'editar', component: EditComponent}
+            {path: 'editar/:id', component: EditComponent}
         ]
     }
 ];

@@ -1,35 +1,139 @@
-<div class="col-lg-12">
+<div class="row justify-content-center end" [@fadeLateral]>
+
+    <div class="col-md-10">
     
-    <h3 class="my-3">{{title}}</h3>
+        <h3 class="my-3 text-center">{{title}}</h3>
+    
+        <form #formAdd="ngForm"
+            (ngSubmit)="onSubmit()">
 
-    <form>
+            <div class="row my-4">
 
-        <p>
+                <div class="col-md-6">
 
-            <label>Nombre</label>
+                    <label for="name">Nombre de la especie</label>
 
-            <input type="text" class="form-control" />
+                    <input type="text"
+                        name="name"
+                        [(ngModel)]="animal.name"
+                        #name="ngModel"
+                        id="name"
+                        class="form-control"
+                        required>
 
-        </p>
+                    <span *ngIf="!name.valid && name.touched">
+                        El nombre de la especie es obligatorio
+                    </span>
 
-        <p>
+                </div>
 
-            <label>Descripción</label>
+                <div class="col-md-6">
 
-            <textarea class="form-control"></textarea>
+                    <label for="nickname">Apodo</label>
 
-        </p>
+                    <input type="text"
+                        name="nickname"
+                        #nickname="ngModel"
+                        [(ngModel)]="animal.nickname"
+                        id="nickname"
+                        class="form-control"
+                        required>
 
-        <p>
+                    <span *ngIf="!nickname.valid && nickname.touched">
+                        El apodo es obligatorio
+                    </span>
 
-            <label>Año</label>
+                </div>
 
-            <input type="text" class="form-control" />
+            </div>
 
-        </p>
+            <div class="row my-4">
 
-        <input type="submit" value="{{title}}" class="btn btn-success" />
+                <div class="col-md-12">
 
-    </form>
+                    <label for="descrip">Descripción</label>
+
+                    <input type="text"
+                        name="descrip"
+                        #descrip="ngModel"
+                        [(ngModel)]="animal.description"
+                        id="descrip"
+                        class="form-control"
+                        required>
+                
+                    <span *ngIf="!descrip.valid && descrip.touched">
+                        La descripcion es obligatorio
+                    </span>
+
+                </div>
+            
+            </div>
+
+            <div class="row my-4">
+
+                <div class="col-md-12">
+
+                    <label for="year">Año</label>
+
+                    <input type="text"
+                        name="year"
+                        #year="ngModel"
+                        [(ngModel)]="animal.year"
+                        id="year"
+                        class="form-control"
+                        required>
+
+                    <span *ngIf="!year.valid && year.touched">
+                        El Año es obligatorio
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="row image_for_edit" *ngIf="!filesToUpload && animal.image && animal.image != 'null'">
+                <div class="col-md-12">
+                    <img src="{{url + 'get-image-animal/' + animal.image }}" 
+                        class="image">
+                </div>
+            </div>
+
+            <div class="row image_for_edit" *ngIf="filesToUpload">
+                
+                <div class="col-md-12" id="port">
+                    <!-- Se agrega en la imagen con js -->
+                </div>
+
+            </div>
+
+
+
+            <div class="row my-4">
+
+                <div class="col-md-12">
+
+                    <label for="avatar">Sube tu avatar</label>
+
+                    <input type="file" 
+                        name="avatar"
+                        class="form-control import-img" 
+                        id="avatar"
+                        (change)="fileChangeEvent($event)">
+
+                </div>
+
+            </div>
+
+            <hr class="mb-3">
+    
+            <button type="submit"
+                class="btn btn-success btn-lg btn-block"
+                [disabled]="!formAdd.form.valid">
+                Agregar
+            </button>
+    
+        </form>
+    
+    </div>
 
 </div>

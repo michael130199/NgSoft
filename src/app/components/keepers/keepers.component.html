@@ -1,5 +1,28 @@
-<div class="container-fluid" [@fadeIn]>
+<div class="container mb-2 pb-5" [@fadeIn]>
 
-    <h1>{{title}}</h1>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2" *ngFor="let keeper of keepers">
+            <div class="card text-white app-shadow" >
+
+                <img src="{{ url + 'get-image-file/' + keeper?.image }}" class="card-img app-img" *ngIf="keeper.image">
+                <img src="{{ url + 'get-image-animal/' + '350' }}" class="card-img app-img" *ngIf="!keeper.image">
+                <div class="card-img-overlay">
+
+                    <h5 class="card-title">{{ keeper.name + ' ' + keeper.surname }}</h5>
+
+                    <p class="card-bottom">Email: {{ keeper.email }}</p>
+
+                </div>
+              </div>
+        </div>
+        
+    </div>
 
 </div>

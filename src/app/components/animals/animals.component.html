@@ -1,5 +1,28 @@
-<div class="container-fluid" [@fadeIn]>
+<div class="container mb-2 pb-5" [@fadeIn]>
 
-    <h1>{{title}}</h1>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2" *ngFor="let animal of animals">
+            <div class="card text-white app-shadow" (click)="routerAnimal(animal._id)">
+
+                <img src="{{ url + 'get-image-animal/' + animal?.image }}" class="card-img app-img" *ngIf="animal.image">
+                <img src="{{ url + 'get-image-animal/' + '350' }}" class="card-img app-img" *ngIf="!animal.image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">{{ animal.name + ' (' + animal.nickname + ')'  }}</h5>
+                  
+                  <p class="card-text">{{ animal.description }}</p>
+                 
+                  <p class="card-bottom">Esta desde el {{ animal.year }}</p>
+                </div>
+              </div>
+        </div>
+        
+    </div>
 
 </div>

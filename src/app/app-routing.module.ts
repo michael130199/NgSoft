@@ -20,6 +20,7 @@ import { Routes, RouterModule } from '@angular/router';
   import { LoginComponent } from './components/login/login.component';
   import { RegisterComponent } from './components/register/register.component';
   import { UserEditComponent } from './components/user-edit/user-edit.component';
+  import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
   
 
 const appRoutes: Routes = [
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   {path: 'registro', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'mis-datos', component: UserEditComponent},
+  {path: 'animal/:id', component: AnimalDetailComponent},
   {path: '**', component: HomeComponent}
 ];
 

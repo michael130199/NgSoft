@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark front">
+
   <a class="navbar-brand text-light">{{title}}</a>
-  <button class="navbar-toggler"type="button" data-toggle="collapse" 
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
     data-target="#navbar-1" aria-controls="navbar-1" 
     aria-expanded="false" aria-label="Toggle navigation">
 
@@ -60,7 +62,7 @@
 
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/registro']" [routerLinkActive]="['active']">
-            <i class="fas fa-user"></i> Registro
+            <i class="fas fa-user-plus"></i> Registro
           </a>
         </li>
 
@@ -97,6 +99,13 @@
 
           <div class="dropdown-menu dropdown-right dropdown-background" 
             aria-labelledby="dropdownMenuLink">
+
+            <a *ngIf="identity && identity.role == 'ROLE_ADMIN'"
+              class="dropdown-item dropdown-color"
+              [routerLink]="['admin-panel']">
+              <i class="fas fa-tasks"></i> Administración
+            </a>
+
             <a class="dropdown-item dropdown-color"
               [routerLink]="['/mis-datos']">
               <i class="fas fa-cogs"></i> Mis Datos
@@ -105,6 +114,7 @@
             <a class="dropdown-item dropdown-color" (click)="logout()">
               <i class="fas fa-sign-out-alt"></i> Salir
             </a>
+
           </div>
 
         </li>

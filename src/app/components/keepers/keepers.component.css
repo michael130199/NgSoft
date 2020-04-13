@@ -1,0 +1,24 @@
+.app-img {
+    object-fit: cover;
+    object-position: center;
+    min-height: 350px;
+    z-index: -1;
+}
+
+
+.app-shadow{
+    background-color: rgba(0,0,0,0);
+}
+
+.app-shadow:hover{
+    transition: all 500ms;
+    background-color: rgba(0,0,0,0.75);
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}

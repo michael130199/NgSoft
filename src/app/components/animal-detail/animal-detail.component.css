@@ -1,0 +1,25 @@
+.card-animal {
+    min-height: 162px;
+    margin: 1rem auto;
+}
+
+
+
+.card-img {
+       
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    min-height: 162px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    object-fit: cover;
+    object-position: center;
+    min-height: 162px;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}

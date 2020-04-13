@@ -77,6 +77,32 @@ export class UserEditComponent implements OnInit {
 
   fileChangeEvent(fileInput: any) {
     this.filesToUpload = <Array<File>>fileInput.target.files;
+
+    let reader = new FileReader();
+
+    reader.onload = function(theFile: Event) {
+
+      let port = document.getElementById("port");
+      let image = document.getElementById("img");
+
+      if(image != null) {
+        port.removeChild(image);
+      }
+
+      let img = document.createElement("img");
+      img.src = "" + reader.result;
+      img.id = "img";
+      img.className = "image";
+      img.style.display = "block";
+      img.style.width = "25%";
+      img.style.margin = "0px auto";
+
+      port.insertBefore(img, null);
+    }
+
+    reader.readAsDataURL(this.filesToUpload[0]);
+
+
     console.log(this.filesToUpload);
   }
 

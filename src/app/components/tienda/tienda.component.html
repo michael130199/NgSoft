@@ -1,72 +1,90 @@
 <div class="container-fluid" [@fadeIn]>
     
-    <hr/>
+    <div class="row">
+        
+        <div class="col-md-6">
 
-    <a class="boton_activo btn btn-success"
-        [@marcar]="status" (click)="cambiarEstado(status)">
+            <hr/>
 
-        <span *ngIf="status === 'inactive'">Boton Inactivo</span>
-        <span *ngIf="status === 'active'">Boton Activo</span>
+            <a class="boton_activo btn btn-success"
+                [@marcar]="status" (click)="cambiarEstado(status)">
 
-    </a>
-    <hr/>
+                <span *ngIf="status === 'inactive'">Boton Inactivo</span>
+                <span *ngIf="status === 'active'">Boton Activo</span>
 
-    <h4>Animaciones CSS3</h4>
+            </a>
+            <hr/>
 
-    <a class="boton_transiciones">Transiciones</a>
+            <h4>Animaciones CSS3</h4>
 
-    <br/>
+            <a class="boton_transiciones">Transiciones</a>
 
-    <div class="caja_animada"></div>
+            <br/>
 
-    <hr/>
+            <div class="caja_animada"></div>
 
-    <h4>Utilizar Jquery dentro de Angular</h4>
-    <button id="botonjq">Mostrar Texto</button>
+            <hr/>
 
-    <p id="textojq" class="d-none alert alert-danger">
-        A lightweight, flexible component that can 
-        optionally extend the entire viewport to 
-        showcase key marketing messages on your site.
-    </p>
+            <h4>Utilizar Jquery dentro de Angular</h4>
+            <button id="botonjq">Mostrar Texto</button>
 
-    <div id="caja" style="border: 1px solid black;width:150px; height:50px">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cumque iste nesciunt assumenda eaque maxime hic commodi eveniet ratione ab quas, blanditiis non vitae maiores quibusdam. Nemo esse omnis numquam?
+            <p id="textojq" class="d-none alert alert-danger">
+                A lightweight, flexible component that can 
+                optionally extend the entire viewport to 
+                showcase key marketing messages on your site.
+            </p>
+
+            <div id="caja" style="border: 1px solid black;width:150px; height:50px">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cumque iste nesciunt assumenda eaque maxime hic commodi eveniet ratione ab quas, blanditiis non vitae maiores quibusdam. Nemo esse omnis numquam?
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+        
+            <hr>
+
+            Padre:
+            <h1> {{titulo}} </h1>
+            <ol>
+                <li>camiseta</li>
+                <li>gorra negra</li>            
+            </ol>
+
+            <hr>
+            Nombre del Parque:
+            <input type="text" [(ngModel)]="NombreParque" (keyup)="mostrarNombre()">
+            Pregunta: {{NombreParque}}
+            <hr>
+
+            <div *ngIf="miParque">
+                <h4>La respuesta es:</h4>
+                <ol>
+                    <li>{{miParque.nombre}}</li>
+                    <li>{{miParque.metros}}</li>
+                    <li>{{miParque.vegetacion}}</li>
+                    <li>
+                        <span *ngIf="miParque.abierto"> Abierto </span>
+                        <span *ngIf="!miParque.abierto"> Cerrado </span>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- hooks onChanges - OnInit - DoCheck - OnDestroy -->
+
+            <hr>
+            <p *ngIf="NombreParque">
+                Hijo:
+                <parques 
+                    [nombre]="NombreParque"
+                    (pasameLosDatos)="datosParques($event)"
+                ></parques>
+            </p>
+
+        </div>
+
+
     </div>
-
-
-
-    <hr>
-
-    Padre:
-    <h1> {{titulo}} </h1>
-    <ol>
-        <li>camiseta</li>
-        <li>gorra negra</li>            
-    </ol>
-
-    <hr>
-    Nombre del Parque:
-    <input type="text" [(ngModel)]="NombreParque" (keyup)="mostrarNombre()">
-    Pregunta: {{NombreParque}}
-    <hr>
-
-    <div *ngIf="miParque">
-        <h4>La respuesta es:</h4>
-        <ol>
-            <li>{{miParque.vegetacion}}</li>
-        </ol>
-    </div>
-
-    <!-- hooks onChanges - OnInit - DoCheck - OnDestroy -->
-
-    <hr>
-    <p *ngIf="NombreParque">
-        Hijo:
-        <parques 
-            [nombre]="NombreParque"
-            (pasameLosDatos)="datosParques($event)"
-        ></parques>
-    </p>
 
 </div>

@@ -60,7 +60,7 @@ export class ParquesComponent implements OnChanges,OnInit,DoCheck,OnDestroy{
         this.pasameLosDatos.emit({
             'nombre': this.nombre,
             'metros': this.metros,
-            'vegetacion': "Samir",
+            'vegetacion': this.vegetacion,
             'abierto': this.abierto
         })
     }
